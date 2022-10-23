@@ -1,0 +1,13 @@
+/*-----------HEADER--------------*/
+.img-fluid {max-width: 10%;}
+.navbar-light {
+    .navbar-nav .nav-link {color:$colorPrincipal;border-color: $borderColor;}
+    .navbar-toggler-icon{background-image: url(../img/nariz-de-perro.png);width: 30%;}
+    .nav-item a:hover{background-color:$bgPrimario; text-align: center;}
+}
+.navbar-brand {
+    &img:hover {
+        background-color: $bgPrimario;
+        border-radius: 50%;
+    }
+}

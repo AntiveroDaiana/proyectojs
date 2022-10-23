@@ -1,0 +1,53 @@
+$vista: mobile;
+
+/*-------------------MEDIAQUERIE-----------------*/
+body{
+    @if $vista == mobile{
+        @media only screen and (max-width: 768px){ 
+            .navbar-light .navbar-toggler-icon {width: 88%} 
+            .iluminacion h1 { 
+                font-size: 300%;
+                -webkit-text-stroke: 2px $colorNegro;
+            }
+            .iluminacion p {
+                font-size: 300%;
+                color: $colorBlanco;
+                -webkit-text-stroke: 2px $colorNegro;
+            }
+            .main2 {
+                font-size: 114%;
+            }
+            .titleGlobal {
+                display: flex;
+            }
+            .boxicon-logos {
+                width: 150%;
+            } 
+            .img-fluid {
+                max-width: 25%;
+            }
+            .titleGlobal {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .mascota {
+                width: 80%;
+            }
+            .don{
+              @extend .titleGlobal;
+              width: 95%;
+            }  
+            .cont1, .cont2, .cont3{
+                margin: 5%;
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+            }
+            .mainwho p {
+                font-size: 110%;
+            }
+        }
+
+    }
+}

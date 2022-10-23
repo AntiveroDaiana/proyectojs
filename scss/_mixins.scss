@@ -1,0 +1,17 @@
+@mixin sizes($width, $padding, $margin) {
+    width: $width;
+    padding: $padding;
+    margin: $margin;
+}
+.cont1 {
+    border-radius: 5%;
+    background-color: $bgBlanco;
+    @include sizes(80%, 15px, 5%);
+& p {padding: 10px;font-size: 24px;}    
+  }
+.cont2 {
+@extend .cont1;
+}
+.cont3 {
+@extend .cont1;
+}

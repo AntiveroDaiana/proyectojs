@@ -17,6 +17,7 @@ while (repetir) {
       repetir= false;
      }else {
       ingreso = parseInt( prompt ("Por favor, ingrese un numero valido"));
+      coincide = (edad <= ingreso);
      }
 }   
    

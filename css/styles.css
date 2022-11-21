@@ -105,20 +105,51 @@ body {
     font-size: 50% large; }
   .mascota ul {
     list-style-type: none;
-    font-size: 12px; }
-  .mascota input {
-    cursor: pointer;
-    margin: 3px;
-    padding: 2px;
-    width: 80px;
-    border-radius: 10px;
-    color: white;
-    background-color: #e496bd; }
-    .mascota input:hover {
+    font-size: 16px; }
+    .mascota input {
+      cursor: pointer;
+      margin: 3px;
+      padding: 0px;
+      width: 206px;
+      border-radius: 10px;
+      color: black;
       background-color: white;
-      color: #e496bd; }
+  }
+      .mascota button {
+        margin: 3px;
+        padding: 2px;
+        width: 80px;
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+        background-color: #e496bd;
+      border: white; }
+      .mascota button:hover {
+        background-color: white;
+        color: #e496bd; }
 
 .upsimagen img {
   width: 50%;
   border-radius: 15%;
   padding: 5%; }
+
+.mascota form {
+  display: none;
+  margin: 27px;
+}
+
+.bottonadop button {
+  display: flex;
+  align-items: center;
+  width: 15px;
+}
+ 
+label {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 20px;
+  color: white;
+}

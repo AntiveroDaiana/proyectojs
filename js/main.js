@@ -1,10 +1,7 @@
 
+ 
 //  const edad = 18;
-
-
-
-//  const entrada = alert ("Bienvenidx a Linkedog, aqui respetamos a nuestros amigos y somos responsables a la hora de realizar la solicitud de adopcion.Seamos empaticos y concientes!💘​💫​");
-//  let ingreso = parseInt( prompt ("Ingrese su edad."));
+// let ingreso = parseInt(prompt ("Ingrese su edad."));
 //  let repetir = true;
 
 // function coincide (ingreso) {

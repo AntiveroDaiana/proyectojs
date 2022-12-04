@@ -1,6 +1,8 @@
 
 //  const edad = 18;
 
+
+
 //  const entrada = alert ("Bienvenidx a Linkedog, aqui respetamos a nuestros amigos y somos responsables a la hora de realizar la solicitud de adopcion.Seamos empaticos y concientes!💘​💫​");
 //  let ingreso = parseInt( prompt ("Ingrese su edad."));
 //  let repetir = true;
@@ -100,44 +102,53 @@
 // console.log(busqueda)
 
 // DOM + EVENTO
-const MaraButton = document.getElementById("MaraButton");
-const maraContainer = document.querySelector(".maraContainer");
 
-MaraButton.addEventListener("click", function(e) {
-   e.target.style.display = 'none';
-   formAdop.style.display = 'block';
- });
+   const adopbutton = document.getElementsByClassName('adopbutton');
+   const perrocontainer = document.getElementsByClassName('mascota');
+   const formadop = document.getElementsByClassName('formadop');
 
- document.getElementById('EnvioSolicitud').onclick = function(){
+   for(let i = 0; i < adopbutton.length; i++){
+      adopbutton[i].addEventListener('click' , function onclick(e){
+         console.log("test");
+         e.target.style.display = "none";
+         formadop[i].style.display = "block";
+      }); 
+   }
+   document.querySelectorAll('.bottonadop').onclick = function(){
    alert('Gracias por enviar tu solicitud!💖​🐶​🐾');
-} 
+  }   
 
 // JSON STORAGE 
- document.querySelector('#EnvioSolicitud').addEventListener('click', guardarSolicitud);
+let allFormAdop = document.querySelectorAll('.formadop')
+allFormAdop.forEach((form,index)=> {
+   form.addEventListener('submit', (event)=>{
+      guardarSolicitud(event, index)}
+      );
+})
 
- function guardarSolicitud(event){
-   event.preventDefault();
-    let sNombre = document.querySelector('#txtName').value,
-        sCelular = document.querySelector('#txtCelular').value,
-        sCorreo = document.querySelector('#txtCorreo').value,
-        sMensaje= document.querySelector('#txtMensaje').value;   
+      function guardarSolicitud(event,index){
+      event.preventDefault();
+       const infoUsuario = {
+         nombre: document.querySelectorAll('.txtname')[index].value,
+         celular: document.querySelectorAll('.txtcelular')[index].value,
+         correo: document.querySelectorAll('.txtcorreo')[index].value,
+         perrito: document.querySelectorAll('.selectdog')[index].value,
+         mensaje: document.querySelectorAll('.txtmensaje')[index].value,
 
- addAdoptionPet(sNombre,sCelular,sCorreo,sMensaje);
- }
+       }   
+   
+    addAdoptionPet(infoUsuario);
+    }
+
+ 
  
  
  let AdoptionList = [];
 
- function addAdoptionPet(pname,pphone,pemail,pmessage) {
+ function addAdoptionPet(infoUsuario) {
 
-            let newAdoption = {
-               nombre: pname,
-               celular: pphone,
-               email: pemail,
-               mensaje: pmessage
-            };
-            console.log(newAdoption);
-            AdoptionList.push(newAdoption);
+            console.log(infoUsuario);
+            AdoptionList.push(infoUsuario);
             localStorageAdoptionList(AdoptionList)
  }
 
@@ -153,4 +164,4 @@ function getAdoptionList(){
 
 function localStorageAdoptionList(plist){
    localStorage.setItem('localAdoptionList', JSON.stringify(plist));
-} 
+}
